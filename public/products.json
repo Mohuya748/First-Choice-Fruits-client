@@ -1,0 +1,66 @@
+[
+    {
+        "img": "https://unsplash.com/photos/McxsrN3WW48",
+        "name": "Mango",
+        "price": "190BDT/kg",
+        "id": 211,
+        "description": "Mango for summer. A demandable fruit for summer",
+        "Supplier" : "ML production",
+        "Quantity" : "20000 kgs"
+    },
+    {
+        "img": "https://unsplash.com/photos/hUkZv0Y47Ic",
+        "name": "Watermelon",
+        "price": "40BDT/Kg",
+        "id": 212,
+        "description": "Very refreshing fruit for summer",
+        "Supplier" : "WM production",
+        "Quantity" : "50000 kgs"
+
+    },
+    {
+        "img": "https://unsplash.com/photos/zEI8yxd_ktY",
+        "name": "Jack-Fruit",
+        "price": "50BDT/kg",
+        "id": 213,
+        "description": "Most underrated fruit in Bangladesh but we have a huge production of this.",
+        "Supplier" : "jack production",
+        "Quantity" : "60000 kgs"
+    },
+    {
+        "img": "https://unsplash.com/photos/FY7wWMvqdQ0",
+        "name": "Banana",
+        "price": "50BDT/dozen",
+        "id": 214,
+        "description": "Most popular fruit. Demandable throughout the whole year.",
+        "Supplier" : "Banana production",
+        "Quantity" : "60000 Dozen"
+    },
+    {
+        "img": "https://unsplash.com/photos/KIlq9HDdZ8k",
+        "name": "Lichi",
+        "price": "107BDT/Kg",
+        "id": 215,
+        "description": "A lovable fruit for all childern and grown ups.",
+        "Supplier" : "THAI Lichi production",
+        "Quantity" : "10000 kgs"
+    },
+    {
+        "img": "https://unsplash.com/photos/tFj5BMAwK-Q",
+        "name": "BlackBerry",
+        "price": "270BDT/kg",
+        "id": 216,
+        "description": "A very expensive fruit for bangladeshi people.",
+        "Supplier" : "THAI Berry production",
+        "Quantity" : "20000 kgs"
+    },
+    {
+        "img": "https://unsplash.com/photos/ZS_RypKo9sk",
+        "name": "PineApple",
+        "price": "40BDT/piece",
+        "id": 217,
+        "description":"A fruit which is acceptable for bangladeshi people in every season!",
+        "Supplier" : "PN production",
+        "Quantity" : "20000 pieces"
+    }
+]
