@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Product = ({ product }) => {
+const ManageInventory = ({ product }) => {
     const { name, img, price, description, Supplier, Quantity } = product;
     return (
+        
         <div className="col col-sm-12 col-lg-4 g-4">
-
             <div className="card h-100">
                 <img src={img} className="card-img-top" alt="..." />
                 <div className="card-body">
@@ -13,7 +13,7 @@ const Product = ({ product }) => {
                     <p className="card-text">Description: {description}</p>
                     <p className="card-text">Supplier: {Supplier}</p>
                     <p className="card-text">Quantity: {Quantity}</p>
-                    <button className='bg-primary'>Book Now</button>
+                    <button className='bg-primary'>DELETE</button>
                 </div>
 
             </div>
@@ -21,4 +21,4 @@ const Product = ({ product }) => {
     );
 };
 
-export default Product;
+export default ManageInventory;
