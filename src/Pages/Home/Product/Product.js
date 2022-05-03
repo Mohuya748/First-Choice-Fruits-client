@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Product = ({ product }) => {
     const { name, img, price, description, Supplier, Quantity } = product;
@@ -13,7 +14,10 @@ const Product = ({ product }) => {
                     <p className="card-text">Description: {description}</p>
                     <p className="card-text">Supplier: {Supplier}</p>
                     <p className="card-text">Quantity: {Quantity}</p>
-                    <button className='bg-primary'>Book Now</button>
+                    <Link to='/inventory/:id'>
+                        <button className='bg-primary'>Update</button>
+                    </Link>
+
                 </div>
 
             </div>
