@@ -1,13 +1,12 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
-import { toast } from 'react-toastify';
 
 const AddItems = () => {
     const { register, handleSubmit } = useForm();
     
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/inventory`;
+        const url = `https://enigmatic-tundra-16228.herokuapp.com/inventory`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -17,11 +16,9 @@ const AddItems = () => {
         })
         .then(res=> res.json())
         .then(result =>{
-            console.log(result)
-            if(data.insertedId){
-                toast('your data is insetred');
-                data.target.reset();
-            }
+            console.log(result);
+
+            
         } )
     };
 

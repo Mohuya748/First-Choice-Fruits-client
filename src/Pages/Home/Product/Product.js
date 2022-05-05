@@ -8,9 +8,7 @@ const Product = ({ product }) => {
     const navigateToItemDetail = id => {
         navigate(`/inventory/${_id}`);
     }
-    const navigateToMyItem = id => {
-        navigate(`/myitems/${_id}`);
-    }
+   
 
 
     return (
@@ -24,8 +22,7 @@ const Product = ({ product }) => {
                     <p className="card-text">Description: {description}</p>
                     <p className="card-text">Supplier: {Supplier}</p>
                     <p className="card-text">Quantity: {Quantity} kg</p>
-                    <button onClick={() => navigateToItemDetail(_id)} className='bg-primary m-2'>Update</button>
-                    <button onClick={() => navigateToMyItem(_id)} className='bg-primary m-2'>Select</button>
+                    <button onClick={() => navigateToItemDetail(_id)} className='bg-primary m-2 p-2'>Update</button>
 
                 </div>
 
