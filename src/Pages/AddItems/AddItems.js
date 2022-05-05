@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 
 const AddItems = () => {
     const { register, handleSubmit } = useForm();
@@ -16,7 +17,11 @@ const AddItems = () => {
         })
         .then(res=> res.json())
         .then(result =>{
-            console.log(result);
+            console.log(result)
+            if(data.insertedId){
+                toast('your data is insetred');
+                data.target.reset();
+            }
         } )
     };
 
@@ -27,6 +32,8 @@ const AddItems = () => {
                 <input className='mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
                 <textarea className='mb-2' placeholder='Description' {...register("description")} />
                 <input className='mb-2' placeholder='Price' type="number" {...register("price")} />
+                <input className='mb-2' placeholder='Supplier' type="text" {...register("Supplier")} />
+                <input className='mb-2' placeholder='Quantity' type="number" {...register("Quantity")} />
                 <input className='mb-2' placeholder='Photo URL' type="text" {...register("img")} />
                 <input type="submit" value="Add items" />
             </form>

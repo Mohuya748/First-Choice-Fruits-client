@@ -13,9 +13,17 @@ const Inventory = () => {
             .then(data => setInventory(data));
     }, [])
     return (
-        <div>
-            <h2>this is inventory: {inventory.name}</h2>
-
+        <div className="col col-sm-12 col-lg-4 container g-4 mt-5">
+            <div className="card h-100">
+                <img src={inventory.img} className="card-img-top" alt="..." />
+                <div className="card-body">
+                    <h5 className="card-title">{inventory.name}</h5>
+                    <p className="card-text">Price:{inventory.price}BDT/kg</p>
+                    <p className="card-text">Description: {inventory.description}</p>
+                    <p className="card-text">Supplier: {inventory.Supplier}</p>
+                    <p className="card-text">Quantity: {inventory.Quantity} kg</p>
+                </div>
+            </div>
         </div>
     );
 };

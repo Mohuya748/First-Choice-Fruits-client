@@ -13,7 +13,7 @@ const Products = () => {
     const navigate = useNavigate();
     
     const handleItem = () =>{
-        const path =`/manageinventories`;
+        const path =`/manageinventory`;
         navigate(path);
     }
   
@@ -22,7 +22,7 @@ const Products = () => {
             <h1 className='text-center'>Inventory Items</h1>
             <div className='row text-center'>
                 {
-                    products.map(product => <Product key={product._id} product={product}></Product>)
+                    products.slice(0,6).map(product => <Product key={product._id} product={product}></Product>)
                 }
             </div>
             <button onClick={handleItem} className='text-green-600 font-bold m-5'>Manage Inventories</button>

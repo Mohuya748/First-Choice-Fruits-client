@@ -1,12 +1,15 @@
 import React from 'react';
-import { Link ,useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Product = ({ product }) => {
-    const { name,_id, img, price, description, Supplier, Quantity } = product;
+    const { name, _id, img, price, description, Supplier, Quantity } = product;
     const navigate = useNavigate();
 
-    const navigateToItemDetail = id =>{
+    const navigateToItemDetail = id => {
         navigate(`/inventory/${_id}`);
+    }
+    const navigateToMyItem = id => {
+        navigate(`/myitems/${_id}`);
     }
 
 
@@ -17,12 +20,12 @@ const Product = ({ product }) => {
                 <img src={img} className="card-img-top" alt="..." />
                 <div className="card-body">
                     <h5 className="card-title">{name}</h5>
-                    <p className="card-text">Price: {price}</p>
+                    <p className="card-text">Price: {price}BDT/kg</p>
                     <p className="card-text">Description: {description}</p>
                     <p className="card-text">Supplier: {Supplier}</p>
-                    <p className="card-text">Quantity: {Quantity}</p>
-                        <button onClick={()=> navigateToItemDetail(_id)} className='bg-primary'>Update</button>
-                   
+                    <p className="card-text">Quantity: {Quantity} kg</p>
+                    <button onClick={() => navigateToItemDetail(_id)} className='bg-primary m-2'>Update</button>
+                    <button onClick={() => navigateToMyItem(_id)} className='bg-primary m-2'>Select</button>
 
                 </div>
 
