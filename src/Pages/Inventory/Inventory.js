@@ -7,17 +7,12 @@ const Inventory = () => {
     const [inventory, setInventory] = useState({});
     const [reload, setIsReload] = useState(true);
 
-
-    console.log(inventory)
-
-
     useEffect(() => {
         const url = `https://enigmatic-tundra-16228.herokuapp.com/inventory/${id}`;
-        console.log(url);
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data));
-    })
+    },[])
   
 
 
@@ -40,16 +35,16 @@ const Inventory = () => {
                 event.target.reset();
                 console.log("success", data);
                 alert('user updated successfully!!!');
-                console.log(url);
             })
 
     }
+
     const quantityLess = event => {
         event.preventDefault();
         const quantity = parseInt(inventory.Quantity) - 1;
         const updateItem = { quantity };
 
-        // sending data for adding quantity
+        // sending data for decrease quantity
         const url = `https://enigmatic-tundra-16228.herokuapp.com/inventory/${id}`;
         fetch(url, {
             method: 'PUT',
@@ -59,10 +54,10 @@ const Inventory = () => {
             body: JSON.stringify(updateItem)
         })
             .then(res => res.json())
-            .then(data => {
+            .then(data =>{
                 console.log("success", data);
                 alert('user updated successfully!!!');
-                console.log(url);
+                
             })
             
     }
