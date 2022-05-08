@@ -2,18 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
+
 const Inventory = () => {
     const { id } = useParams();
     const [inventory, setInventory] = useState({});
     const [reload, setIsReload] = useState(true);
 
+
+    console.log(inventory)
+
+
     useEffect(() => {
         const url = `https://enigmatic-tundra-16228.herokuapp.com/inventory/${id}`;
+        console.log(url);
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data));
-    },[])
-  
+    }, [reload])
 
 
     const handleUpdateUser = (event) => {
@@ -35,16 +40,17 @@ const Inventory = () => {
                 event.target.reset();
                 console.log("success", data);
                 alert('user updated successfully!!!');
+                window.location.reload();
+                console.log(url);
             })
 
     }
-
     const quantityLess = event => {
         event.preventDefault();
         const quantity = parseInt(inventory.Quantity) - 1;
         const updateItem = { quantity };
 
-        // sending data for decrease quantity
+        // sending data for adding quantity
         const url = `https://enigmatic-tundra-16228.herokuapp.com/inventory/${id}`;
         fetch(url, {
             method: 'PUT',
@@ -54,12 +60,12 @@ const Inventory = () => {
             body: JSON.stringify(updateItem)
         })
             .then(res => res.json())
-            .then(data =>{
+            .then(data => {
                 console.log("success", data);
                 alert('user updated successfully!!!');
-                
+                window.location.reload();
+                console.log(url);
             })
-            
     }
     const navigate = useNavigate();
     const handleItem = () =>{
@@ -92,6 +98,7 @@ const Inventory = () => {
             <div className='text-center'>
             <button onClick={handleItem} className='text-green-600 font-bold my-4 p-2 bg-white border border-danger text-danger rounded'>Manage Inventories</button>
             </div>
+
         </div>
     );
 };
