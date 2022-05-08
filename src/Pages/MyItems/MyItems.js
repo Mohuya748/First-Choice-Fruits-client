@@ -46,7 +46,7 @@ const MyItems = () => {
     
     return (
         <div className='container'>
-        <h2 className='fw-bold text-center mt-5'>{myItems.length}</h2>
+        <h2 className='fw-bold text-center mt-5 text-success'>My Items</h2>
         <div className='row  mb-5'>{
             myItems.map(item => <div key={item._id}>
                 <div className="col col-sm-12 col-lg-4 container mb-4">
