@@ -42,15 +42,15 @@ function App() {
             <ManageInventories></ManageInventories>
           </RequireAuth>
         }> </Route>
-        <Route path='/myitems/:id' element={
+        <Route path='/myitems' element={
           <RequireAuth>
             <MyItems></MyItems>
           </RequireAuth>
         }> </Route>
         <Route path='/*' element={<NotFound></NotFound>}> </Route>
       </Routes>
-        <ToastContainer />
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }

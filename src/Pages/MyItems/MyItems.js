@@ -4,57 +4,41 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import axios from 'axios';
 
 const MyItems = () => {
     const [user] = useAuthState(auth);
      const [myItems, setMyItems] = useState([]);
-    // useEffect(() => {
-    //     fetch(`http://https://enigmatic-tundra-16228.herokuapp.com/inventory0/${user?.email}`)
-    //         .then((res) => res.json())
-    //         .then((data) => setItems(data));
-    // }, [control, user?.email]);
-    useEffect(() => {
-
-        async function fetchMyAPI() {
-            const email = user?.email;
-            const url = `http://https://enigmatic-tundra-16228.herokuapp.com/inventory0/myitems?email=${email}`;
-            try {
-                await fetch(url, {
-                    headers: {
-                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                    }
-                })
-                    .then(res => res.json())
-                    .then(data => setMyItems(data))
+   
+    useEffect( () => {
+       const getItems = async()=> {
+           const email = user.email;
+           console.log(email)
+            const url = `https://enigmatic-tundra-16228.herokuapp.com/myitems?email=${email}`;
+            const {data} = await axios.get(url);
+            setMyItems(data);
             }
-            catch (error) {
-                console.log(error.message);
-                if (error.response.status === 401 || error.response.status === 403) {
-                    signOut(auth);
-                    Navigate('/login')
-                }
-            }
-        }
-        fetchMyAPI()
-    }, [user?.email])
+            getItems();
+    },[user])
+            
 
 
-    const handleItemDelete = id => {
-        const proceed = window.confirm('Deleting Items is Permanent! Think twice before pressing OK...');
-        if (proceed) {
-            const url = `http://https://enigmatic-tundra-16228.herokuapp.com/inventory0/item/${id}`;
-            fetch(url, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.deletedCount > 0) {
-                        const remaining = myItems.filter(item => item._id !== id);
-                        setMyItems(remaining);
-                    }
-                })
-        }
-    }
+    // const handleItemDelete = id => {
+    //     const proceed = window.confirm('Deleting Items is Permanent! Think twice before pressing OK...');
+    //     if (proceed) {
+    //         const url = `http://https://enigmatic-tundra-16228.herokuapp.com/inventory0/item/${id}`;
+    //         fetch(url, {
+    //             method: 'DELETE'
+    //         })
+    //             .then(res => res.json())
+    //             .then(data => {
+    //                 if (data.deletedCount > 0) {
+    //                     const remaining = myItems.filter(item => item._id !== id);
+    //                     setMyItems(remaining);
+    //                 }
+    //             })
+    //     }
+    // }
 
 
       
@@ -73,7 +57,7 @@ const MyItems = () => {
                             <p className="card-text">Description: {myItems.description}</p>
                             <p className="card-text">Supplier: {myItems.Supplier}</p>
                             <p className="card-text">Quantity: {myItems.Quantity} kg</p>
-                            <button onClick={() => handleItemDelete(myItems._id)}>DELETE</button>
+                            {/* <button onClick={() => handleItemDelete(myItems._id)}>DELETE</button> */}
                         </div>
                     </div>
                 </div>
