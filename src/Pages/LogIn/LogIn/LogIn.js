@@ -48,7 +48,7 @@ const LogIn = () => {
         const password = passwordRef.current.value;
 
         await signInWithEmailAndPassword(email, password);
-        const {data} = await axios.post('https://enigmatic-tundra-16228.herokuapp.com/login',{email});
+        const {data} = await axios.post('http://https://enigmatic-tundra-16228.herokuapp.com/inventory0/login',{email});
         localStorage.setItem('accessToken',data.accessToken);
         navigate(from, {replace:true});
         

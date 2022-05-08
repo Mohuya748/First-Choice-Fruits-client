@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 const AddItems = () => {
     const { register, handleSubmit } = useForm();
     
-    const onSubmit = data => {
+    const onSubmit = (data,event) => {
         console.log(data);
         const url = `https://enigmatic-tundra-16228.herokuapp.com/inventory`;
         fetch(url, {
@@ -17,6 +17,8 @@ const AddItems = () => {
         .then(res=> res.json())
         .then(result =>{
             console.log(result);
+            alert('item added successfully!!!');
+            event.target.reset();
 
             
         } )

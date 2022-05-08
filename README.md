@@ -5,7 +5,7 @@
 
 netlify deploy link : https://first-choice-fruits.netlify.app/
 
-heroku link : https://enigmatic-tundra-16228.herokuapp.com/
+heroku link : http://https://enigmatic-tundra-16228.herokuapp.com/inventory0/
 
 client site repo link : https://classroom.github.com/a/Y0bAS9YS
 
