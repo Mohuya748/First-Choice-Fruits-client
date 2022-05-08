@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Inventory = () => {
     const { id } = useParams();
@@ -16,7 +17,8 @@ const Inventory = () => {
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data));
-    }, [reload])
+    })
+  
 
 
     const handleUpdateUser = (event) => {
@@ -62,6 +64,12 @@ const Inventory = () => {
                 alert('user updated successfully!!!');
                 console.log(url);
             })
+            
+    }
+    const navigate = useNavigate();
+    const handleItem = () =>{
+        const path =`/manageinventory`;
+        navigate(path);
     }
 
     return (
@@ -86,7 +94,9 @@ const Inventory = () => {
                 </form>
                 <button onClick={quantityLess} className='m-3 p-2 bg-danger border border-white text-white rounded'>Delivered</button>
             </div>
-
+            <div className='text-center'>
+            <button onClick={handleItem} className='text-green-600 font-bold my-4 p-2 bg-white border border-danger text-danger rounded'>Manage Inventories</button>
+            </div>
         </div>
     );
 };

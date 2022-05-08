@@ -25,7 +25,7 @@ const Products = () => {
                     products.slice(0,6).map(product => <Product key={product._id} product={product}></Product>)
                 }
             </div>
-            <button onClick={handleItem} className='text-green-600 font-bold m-5'>Manage Inventories</button>
+            <button onClick={handleItem} className='text-green-600 font-bold my-5 p-2 bg-white border border-danger text-danger rounded'>Manage Inventories</button>
         </div>
     );
 };

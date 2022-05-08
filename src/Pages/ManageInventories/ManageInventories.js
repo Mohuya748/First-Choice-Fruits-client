@@ -31,7 +31,7 @@ const ManageInventories = () => {
         <div>
             <h1 className='text-center'>Manage Inventories</h1>
             <div className='text-center'>
-            <button onClick={handleAddItem} className='text-green-600 font-bold m-5'> Add new Items</button>
+            <button onClick={handleAddItem} className='m-3 p-2 bg-danger border border-white text-white rounded'> Add new Items</button>
             </div>
            
 
@@ -47,7 +47,7 @@ const ManageInventories = () => {
                                     <p className="card-text">Description: {inventory.description}</p>
                                     <p className="card-text">Supplier: {inventory.Supplier}</p>
                                     <p className="card-text">Quantity: {inventory.Quantity} kg</p>
-                                    <button onClick={() => handleDelete(inventory._id)}>DELETE</button>
+                                    <button className='m-3 p-2 bg-danger border border-white text-white rounded' onClick={() => handleDelete(inventory._id)}>DELETE</button>
                                 </div>
                             </div>
                         </div>
