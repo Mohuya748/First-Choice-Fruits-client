@@ -4,10 +4,9 @@
 
 netlify deploy link : https://first-choice-fruits.netlify.app/
 
-client site repo link : https://classroom.github.com/a/Y0bAS9YS
+client site repo link :https://github.com/Mohuya748/First-Choice-Fruits-client
 
-server site repo link : https://classroom.github.com/a/ldz96-w6
-
+server site repo link :https://github.com/Mohuya748/First-Choice-Fruits-Server
 <h2> Features :</h2>
 <ul>
 <li>Login/Register System With Google</li>

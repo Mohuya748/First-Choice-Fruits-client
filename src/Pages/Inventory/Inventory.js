@@ -45,6 +45,7 @@ const Inventory = () => {
             })
 
     }
+    
     const quantityLess = event => {
         event.preventDefault();
         const quantity = parseInt(inventory.Quantity) - 1;
